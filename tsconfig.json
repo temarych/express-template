@@ -15,8 +15,6 @@
       "@modules/*": ["./src/modules/*"],
       "@middleware/*": ["./src/middleware/*"],
       "@config/*": ["./src/config/*"],
-      "@models/*": ["./src/models/*"],
-      "@mappers/*": ["./src/mappers/*"],
       "@typings/*": ["./src/typings/*"],
       "@utils/*": ["./src/utils/*"],
       "@api/*": ["./src/api/*"],

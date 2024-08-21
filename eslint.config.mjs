@@ -5,6 +5,7 @@ import importPlugin from 'eslint-plugin-import';
 import eslintConfigPrettier from 'eslint-config-prettier';
 
 export default tseslint.config(
+  { ignores: ['node_modules', 'dist', 'src/api'] },
   { files: ['**/*.{js,mjs,cjs,ts}'] },
   { languageOptions: { globals: globals.browser } },
   pluginJs.configs.recommended,

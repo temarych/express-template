@@ -1,4 +1,4 @@
-import { Result } from '@models/Result';
+import { Result } from '@typings/result';
 
 export interface IJwtService {
   sign<T extends object>(payload: T): string;

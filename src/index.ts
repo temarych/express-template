@@ -4,7 +4,7 @@ import 'dotenv/config';
 
 import express from 'express';
 import cors from 'cors';
-
+import { prisma } from '@config/db.config';
 import { userRouter } from '@modules/user/user.router';
 import { authRouter } from '@modules/auth/auth.router';
 import { handleError } from '@modules/error/error-middleware';
@@ -22,4 +22,6 @@ app.use(handleError);
 
 app.listen(port, async () => {
   console.log(`Express server is listening at http://localhost:${port}`);
+  await prisma.$connect();
+  console.log('Prisma client connected to DB');
 });

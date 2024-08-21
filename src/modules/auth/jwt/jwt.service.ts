@@ -1,6 +1,6 @@
 import { injectable } from 'tsyringe';
 import jwt from 'jsonwebtoken';
-import { Result } from '@models/Result';
+import { Result } from '@typings/result';
 import { IJwtService } from './jwt.service.interface';
 
 @injectable()
