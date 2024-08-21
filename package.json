@@ -49,6 +49,7 @@
     "utility-types": "^3.11.0"
   },
   "dependencies": {
+    "@faker-js/faker": "^8.4.1",
     "@prisma/client": "^5.18.0",
     "autobind-decorator": "^2.4.0",
     "axios": "^1.7.4",
@@ -64,6 +65,9 @@
     "tsyringe": "^4.8.0",
     "yamljs": "^0.3.0",
     "zod": "^3.23.8"
+  },
+  "prisma": {
+    "seed": "node -r @swc-node/register ./prisma/seed.ts"
   },
   "lint-staged": {
     "*.{js,mjs,cjs,ts}": [
