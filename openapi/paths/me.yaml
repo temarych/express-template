@@ -12,8 +12,8 @@ get:
         application/json:
           schema:
             $ref: ../features/user/UserDto.yaml
-    400:
-      description: invalid request body
+    401:
+      description: unauthorized
       content:
         application/json:
           schema:

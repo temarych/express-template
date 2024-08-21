@@ -8,6 +8,7 @@ import { prisma } from '@config/db.config';
 import { userRouter } from '@modules/user/user.router';
 import { authRouter } from '@modules/auth/auth.router';
 import { handleError } from '@modules/error/error-middleware';
+import { docsRouter } from '@modules/docs/docs.router';
 
 export const app = express();
 export const port = process.env.PORT ?? 3000;
@@ -17,6 +18,7 @@ app.use(express.json());
 
 app.use(userRouter);
 app.use(authRouter);
+app.use(docsRouter);
 
 app.use(handleError);
 
