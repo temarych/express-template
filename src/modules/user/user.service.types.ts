@@ -1,3 +1,3 @@
 import { IUser } from './user.entity';
 
-export type ICreateUserData = Omit<IUser, 'id' | 'pictureUrl'>;
+export type ICreateUserData = Omit<IUser, 'id'>;
