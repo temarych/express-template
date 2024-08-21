@@ -1,0 +1,8 @@
+extends:
+  - recommended
+theme:
+  openapi:
+    generateCodeSamples:
+      languages:
+        - lang: curl
+        - lang: Node.js

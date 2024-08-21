@@ -1,0 +1,25 @@
+post:
+  summary: Signup
+  operationId: signup
+  tags:
+    - user
+  security: []
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../features/auth/SignupRequestDto.yaml
+  responses:
+    200:
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: ../features/auth/SignupResponseDto.yaml
+    400:
+      description: invalid request body
+      content:
+        application/json:
+          schema:
+            $ref: ../features/app/ApiErrorDto.yaml

@@ -1,0 +1,25 @@
+post:
+  summary: Login
+  operationId: login
+  tags:
+    - user
+  security: []
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../features/auth/LoginRequestDto.yaml
+  responses:
+    200:
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: ../features/auth/LoginResponseDto.yaml
+    400:
+      description: invalid request body
+      content:
+        application/json:
+          schema:
+            $ref: ../features/app/ApiErrorDto.yaml

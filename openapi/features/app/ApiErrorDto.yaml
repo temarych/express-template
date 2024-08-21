@@ -1,0 +1,11 @@
+type: object
+required:
+  - code
+  - message
+properties:
+  code:
+    type: string
+    example: incorrect-password
+  message:
+    type: string
+    example: Incorrect password

@@ -1,0 +1,20 @@
+get:
+  summary: Get me
+  operationId: getMe
+  tags:
+    - user
+  security:
+    - JWT: []
+  responses:
+    200:
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: ../features/user/UserDto.yaml
+    400:
+      description: invalid request body
+      content:
+        application/json:
+          schema:
+            $ref: ../features/app/ApiErrorDto.yaml

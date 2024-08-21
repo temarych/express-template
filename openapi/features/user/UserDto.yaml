@@ -1,0 +1,11 @@
+type: object
+required:
+  - id
+  - email
+properties:
+  id:
+    type: string
+    example: cd552d7b-ca4c-4666-8bda-b883f421dd5b
+  email:
+    type: string
+    example: peter@gmail.com

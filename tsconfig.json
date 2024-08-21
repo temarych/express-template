@@ -13,6 +13,7 @@
     "strictPropertyInitialization": false,
     "paths": {
       "@modules/*": ["./src/modules/*"],
+      "@middleware/*": ["./src/middleware/*"],
       "@config/*": ["./src/config/*"],
       "@models/*": ["./src/models/*"],
       "@mappers/*": ["./src/mappers/*"],
