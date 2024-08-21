@@ -1,0 +1,66 @@
+{
+  "name": "express-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "yarn db:generate && yarn api:refresh && tsc && tsc-alias",
+    "start": "node ./dist/index.js",
+    "dev": "node -r @swc-node/register --watch ./src/index.ts",
+    "lint": "eslint .",
+    "format": "prettier . --write",
+    "api:refresh": "rimraf ./src/api && yarn api:bundle && yarn api:generate",
+    "api:generate": "orval ./orval.config.ts",
+    "api:bundle": "redocly bundle ./openapi/index.yaml --output schema.yaml",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "db:seed": "prisma db seed",
+    "db:reset": "prisma db push --force-reset",
+    "prepare": "husky"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.9.0",
+    "@swc-node/register": "^1.10.9",
+    "@swc/cli": "^0.4.0",
+    "@swc/core": "^1.7.14",
+    "@types/bcrypt": "^5.0.2",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^9.9.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.1",
+    "globals": "^15.9.0",
+    "husky": "^9.1.5",
+    "lint-staged": "^15.2.9",
+    "prettier": "3.3.3",
+    "tsc-alias": "^1.8.10",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.2.0"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-async-errors": "^3.1.1",
+    "reflect-metadata": "^0.2.2"
+  },
+  "lint-staged": {
+    "*.{js,mjs,cjs,ts}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{md,json,yaml}": [
+      "prettier --write"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
