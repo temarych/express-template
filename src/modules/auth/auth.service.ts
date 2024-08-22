@@ -1,5 +1,6 @@
 import { injectable } from 'tsyringe';
 import { JsonWebTokenError, TokenExpiredError } from 'jsonwebtoken';
+import { HttpStatus } from '@typings/http-status';
 import { UserService } from '@modules/user/user.service';
 import { IUser } from '@modules/user/user.entity';
 import { ApiError } from '@modules/error/api-error.entity';
@@ -74,7 +75,11 @@ export class AuthService implements IAuthService {
 
     const user = await this.userService.getUserById(payload!.id);
 
-    if (!user) throw new ApiError(ApiErrorCode.EntityNotFound);
+    if (!user) {
+      throw new ApiError(ApiErrorCode.EntityNotFound, {
+        status: HttpStatus.NotFound,
+      });
+    }
 
     return { user, accessToken };
   }

@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
 import { NextFunction, Request, Response } from 'express';
+import { HttpStatus } from '@typings/http-status';
 import { ApiError } from './api-error.entity';
 import { ApiErrorCode } from './api-error-code.enum';
-import { httpStatusMap } from './http-status.map';
 import { apiErrorMapper } from './api-error.mapper';
 
 export const handleError = async (
@@ -20,6 +20,6 @@ export const handleError = async (
   }
 
   response
-    .status(httpStatusMap[apiError.code])
+    .status(apiError.status ?? HttpStatus.InternalServerError)
     .send(apiErrorMapper.toApiErrorDto(apiError));
 };
