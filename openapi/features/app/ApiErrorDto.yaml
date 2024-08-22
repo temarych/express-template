@@ -9,3 +9,6 @@ properties:
   message:
     type: string
     example: Incorrect password
+  details:
+    type: object
+    example: '{}'

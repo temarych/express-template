@@ -1,4 +1,5 @@
 import { ApiErrorDto } from '@api/apiErrorDto';
+import { ApiErrorDtoDetails } from '@api/apiErrorDtoDetails';
 import { ApiError } from './api-error.entity';
 
 class ApiErrorMapper {
@@ -6,6 +7,7 @@ class ApiErrorMapper {
     return {
       code: entity.code,
       message: entity.message,
+      details: entity.details as ApiErrorDtoDetails,
     };
   }
 }

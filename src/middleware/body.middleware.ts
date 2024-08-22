@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 import { Schema, ZodError } from 'zod';
 import { ApiErrorCode } from '@modules/error/api-error-code.enum';
+import { ApiError } from '@modules/error/api-error.entity';
 
 export const getErrors = (zodError: ZodError) => {
   return zodError.errors.map((error) => ({
@@ -15,9 +16,8 @@ export const body =
     const result = schema.safeParse(request.body);
 
     if (!result.success) {
-      return response.status(400).send({
-        code: ApiErrorCode.InvalidBody,
-        errors: getErrors(result.error),
+      throw new ApiError(ApiErrorCode.InvalidBody, {
+        details: getErrors(result.error),
       });
     }
 
