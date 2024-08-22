@@ -67,7 +67,15 @@ yarn format
 Bundle your OpenAPI schema in a single `schema.yaml` file
 
 ```bash
-yarn g:doc
+yarn api:bundle
+```
+
+### Generating API
+
+Generate API from bundled OpenAPI schema:
+
+```bash
+yarn api:generate
 ```
 
 ### Regenerating API
