@@ -10,12 +10,9 @@ This is an Express template that provides a basic boilerplate and an OpenAPI sch
 
 ## Installation
 
-1. Clone this repository.
-2. Install dependencies:
-
-```bash
-yarn
-```
+1. Clone this repository
+2. Install dependencies
+3. Generate API via Orval
 
 ## Scripts
 
